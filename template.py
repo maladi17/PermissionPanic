@@ -20,6 +20,7 @@ def Name_Vectors(request_headers, NameSettings):
 
         print(Fore.GREEN + "Disabled user ")
         print(Style.RESET_ALL)
+        print("shay")
 
     except:
         pass
