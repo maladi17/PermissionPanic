@@ -1,2 +1,2 @@
-# PermissionPanic
-<img src="1.png" width="400">
+
+<img src="1.png" width="1000">
