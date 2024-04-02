@@ -31,7 +31,7 @@ class ApplicationRW_Handler(AttackHandler):
 
                     res = requests.post(create_message_URL, json=message_obj, headers=request.request_headers)
                     text = res.json()
-                    if res.status_code is 200:
+                    if res.status_code == 200:
                         status = True
                         secret = text['secretText']
                         message += "Got secret: %s from sp: %s\n" % (secret, sp)
