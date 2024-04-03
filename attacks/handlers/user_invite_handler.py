@@ -9,7 +9,7 @@ logger = logger.createLogger('attacks.handlers.userInvite_handler')
 class UserInvite_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         # TODO map request.roles to fit with this attack
-        if True:
+        if "User.Invite.All" in request.roles:
             status = False
             attack_name = "UserInviteVectors"
             message = ""
