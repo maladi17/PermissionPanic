@@ -10,7 +10,7 @@ class ApplicationRW_Handler(AttackHandler):
 
     def handle(self, request: Request,responses:List[Response]):     
         # TODO map request.roles to fit with this attack
-        if True:
+        if "Application.ReadWrite.All" in request.roles:
             status = False
             attack_name = "ApplicationRWVectors"
             message = ""
