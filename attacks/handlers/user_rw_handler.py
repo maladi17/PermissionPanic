@@ -9,7 +9,7 @@ logger = logger.createLogger('attacks.handlers.user_rw')
 class UserRW_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         # TODO map request.roles to fit with this attack
-        if True:
+        if "User.ReadWrite.All" in request.roles:
             status = False
             attack_name = "UserRW_Vectors"
             message = ""
