@@ -5,6 +5,7 @@ from attacks.handlers.application_rw_handler import ApplicationRW_Handler
 from attacks.handlers.user_rw_handler import UserRW_Handler
 from attacks.handlers.au_handler import AU_Handler
 from attacks.handlers.team_settings_handler import TeamSettings_Handler
+from attacks.handlers.team_member_handler import TeamMember_Handler
 from attacks.handlers import *
 
 from utils import logger
@@ -31,10 +32,12 @@ class AttackController:
         user_invite_handler = UserInvite_Handler()
         au_rw_handler = AU_Handler()
         team_settings_handler = TeamSettings_Handler()
+        TeamMember_handler = TeamMember_Handler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
         user_invite_handler.set_next(au_rw_handler)
         au_rw_handler.set_next(team_settings_handler)
-        
+        team_settings_handler.set_next(TeamMember_handler)
+
         return application_rw_vector_attack.handle(request,[])
