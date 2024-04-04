@@ -14,6 +14,7 @@ from attacks.handlers.user_en_dis_handler import UserEnDis_Handler
 from attacks.handlers.mail_send_handler import MailSend_Handler
 from attacks.handlers.group_pim_handler import GroupPIM_Handler
 from attacks.handlers.laps_handler import Laps_Handler
+from attacks.handlers.sec_defaults_handler import SecDefaults_Handler
 from attacks.handlers import *
 
 from utils import logger
@@ -49,6 +50,7 @@ class AttackController:
         mailSend = MailSend_Handler()
         gpim = GroupPIM_Handler()
         laps = Laps_Handler()
+        secDef = SecDefaults_Handler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
@@ -63,5 +65,6 @@ class AttackController:
         UserEnDis.set_next(mailSend)
         mailSend.set_next(gpim)
         gpim.set_next(laps)
+        laps.set_next(secDef)
 
         return application_rw_vector_attack.handle(request,[])
