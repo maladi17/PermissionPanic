@@ -12,6 +12,7 @@ from attacks.handlers.entitlement_handler import Entitlementntitlement_Handler
 from attacks.handlers.exchange_handler import Exchange_Handler
 from attacks.handlers.user_en_dis_handler import UserEnDis_Handler
 from attacks.handlers.mail_send_handler import MailSend_Handler
+from attacks.handlers.group_pim_handler import GroupPIM_Handler
 from attacks.handlers import *
 
 from utils import logger
@@ -45,6 +46,7 @@ class AttackController:
         exchange = Exchange_Handler()
         UserEnDis = UserEnDis_Handler()
         mailSend = MailSend_Handler()
+        gpim = GroupPIM_Handler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
@@ -57,5 +59,6 @@ class AttackController:
         entitlement.set_next(exchange)
         exchange.set_next(UserEnDis)
         UserEnDis.set_next(mailSend)
+        mailSend.set_next(gpim)
 
         return application_rw_vector_attack.handle(request,[])
