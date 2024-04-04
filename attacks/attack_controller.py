@@ -6,6 +6,7 @@ from attacks.handlers.user_rw_handler import UserRW_Handler
 from attacks.handlers.au_handler import AU_Handler
 from attacks.handlers.team_settings_handler import TeamSettings_Handler
 from attacks.handlers.team_member_handler import TeamMember_Handler
+from attacks.handlers.conditional_access_handler import ConditionalAccess_Handler
 from attacks.handlers import *
 
 from utils import logger
@@ -33,11 +34,13 @@ class AttackController:
         au_rw_handler = AU_Handler()
         team_settings_handler = TeamSettings_Handler()
         TeamMember_handler = TeamMember_Handler()
+        conditional_access = ConditionalAccess_Handler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
         user_invite_handler.set_next(au_rw_handler)
         au_rw_handler.set_next(team_settings_handler)
         team_settings_handler.set_next(TeamMember_handler)
+        TeamMember_handler.set_next(conditional_access)
 
         return application_rw_vector_attack.handle(request,[])
