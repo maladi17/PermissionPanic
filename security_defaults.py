@@ -1,38 +1,49 @@
+from typing import List
+from attacks.handlers.base_handler import AttackHandler, Request, Response
+from utils import logger
 import requests
-import colorama
-from colorama import Fore, Style
+
+logger = logger.createLogger('attacks.handlers.sec_defaults_handler')
 
 
-def SecDefaults_Vectors(request_headers):
-    print()
-    print("Policy.ReadWrite.SecurityDefaults - Allows the app to read and write your organization's security defaults "
-          "policy, without a signed-in user.")
-    print()
-    try:
-        print("Attack vector - security settings shut down.")
+class SecDefaults_Handler(AttackHandler):
+    def handle(self, request: Request,responses:List[Response]):
+        # TODO map request.roles to fit with this attack
+        if ("Policy.ReadWrite.SecurityDefaults" in request.roles) and ("Policy.Read.All" in request.roles):
+            status = False
+            attack_name = "SecurityDefaultsVectors"
+            message = ""
+            error = "SecurityDefaultsVectors - failed"
+            logger.debug("Policy.ReadWrite.SecurityDefaults - Allows the app to read and write your organization's security defaults policy, without a signed-in user.")
+            logger.debug("Policy.Read.All - Allows the app to read all your organization's policies without a signed in user.")
+            logger.debug("Attack vector - security settings shut down.") 
+            try:
+                create_message_URL = "https://graph.microsoft.com/v1.0/policies/identitySecurityDefaultsEnforcementPolicy"
 
-        create_message_URL = "https://graph.microsoft.com/v1.0/policies/identitySecurityDefaultsEnforcementPolicy"
+                result = requests.get(create_message_URL, headers=request.request_headers)
+                json = result.json()
 
-        result = requests.get(create_message_URL, headers=request_headers)
-        json = result.json()
-        if not json["isEnabled"]:
-            print(Fore.GREEN + "Security Defaults is disabled.")
-            print(Style.RESET_ALL)
+                if json["isEnabled"]:
+                    create_message_URL = "https://graph.microsoft.com/v1.0/policies/identitySecurityDefaultsEnforcementPolicy"
+                    message_obj = {
+                        "isEnabled": False
+                    }
+                    result = requests.patch(create_message_URL, json=message_obj, headers=request.request_headers)
+                    json = result.json()
 
-        else:
-            create_message_URL = "https://graph.microsoft.com/v1.0/policies/identitySecurityDefaultsEnforcementPolicy"
-            message_obj = {
-                "isEnabled": False
-            }
-            result = requests.patch(create_message_URL, json=message_obj, headers=request_headers)
-            json = result.json()
-            if not json["isEnabled"]:
-                print(Fore.GREEN + "Security Defaults is disabled.")
-                print(Style.RESET_ALL)
-            else:
-                print(Fore.RED + "Security Defaults status is unknown. Probably still active.")
-                print(Style.RESET_ALL)
+                    if not json["isEnabled"]:
+                        message += "Security default shut  down.\n"
+                        status = True
+                        
+                if message == "":
+                    message = error
+            except:
+                logger.error("Unexpected exception in SecurityDefaults_Handler function")
+
+            
+            responses.append(Response(attack_name,request.tenantId,request.appId,status,message))
 
 
-    except:
-        pass
+
+        return super().handle(request,responses)
+          
