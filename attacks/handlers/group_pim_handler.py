@@ -43,8 +43,7 @@ class GroupPIM_Handler(AttackHandler):
                 }
 
                 result = requests.post(create_message_URL, json=message_obj, headers=request.request_headers)
-                print(result.status_code)
-                print(result.json())
+
                 if result.status_code == 201:
                     message += "Added %s to %s \n" % (conf["principal"], conf["groupId"])
                     status = True
