@@ -48,7 +48,7 @@ class ConditionalAccess_Handler(AttackHandler):
                 }
                 result = requests.post(create_message_URL, json=message_obj, headers=request.request_headers)
                 if result.status_code == 201:
-                    print(result.json)
+
                     message += "Added block on: %s \n" % (conf["users"])
                     status = True
                 if message == "":
