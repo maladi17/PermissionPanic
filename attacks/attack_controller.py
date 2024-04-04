@@ -10,6 +10,7 @@ from attacks.handlers.conditional_access_handler import ConditionalAccess_Handle
 from attacks.handlers.cross_tenant_handler import CrossTenant_Handler
 from attacks.handlers.entitlement_handler import Entitlementntitlement_Handler
 from attacks.handlers.exchange_handler import Exchange_Handler
+from attacks.handlers.user_en_dis_handler import UserEnDis_Handler
 from attacks.handlers import *
 
 from utils import logger
@@ -41,6 +42,7 @@ class AttackController:
         CrossTenant = CrossTenant_Handler()
         entitlement = Entitlementntitlement_Handler()
         exchange = Exchange_Handler()
+        UserEnDis = UserEnDis_Handler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
@@ -51,5 +53,6 @@ class AttackController:
         conditional_access.set_next(CrossTenant)
         CrossTenant.set_next(entitlement)
         entitlement.set_next(exchange)
+        exchange.set_next(UserEnDis)
 
         return application_rw_vector_attack.handle(request,[])
