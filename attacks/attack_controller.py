@@ -21,6 +21,7 @@ from attacks.handlers.rolemanagemantPersistance_handler import RolemanagemantPer
 from attacks.handlers.rolemanagemant_handler import Rolemanagemant_Handler
 from attacks.handlers.oauth_deleg_handler  import OAuthDeleg_Handler
 from attacks.handlers.directory_handler import Directory_Handler
+from attacks.handlers.role_schedule_handler import RoleSchedule_Handler
 from attacks.handlers import *
 
 from utils import logger
@@ -63,6 +64,7 @@ class AttackController:
         roleManagement = Rolemanagemant_Handler()
         oauth = OAuthDeleg_Handler()
         directory = Directory_Handler()
+        roleSchedule = RoleSchedule_Handler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
@@ -84,5 +86,6 @@ class AttackController:
         rolePersist.set_next(roleManagement)
         roleManagement.set_next(oauth)
         oauth.set_next(directory)
+        directory.set_next(roleSchedule)
 
         return application_rw_vector_attack.handle(request,[])
