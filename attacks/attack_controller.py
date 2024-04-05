@@ -16,6 +16,9 @@ from attacks.handlers.group_pim_handler import GroupPIM_Handler
 from attacks.handlers.laps_handler import Laps_Handler
 from attacks.handlers.sec_defaults_handler import SecDefaults_Handler
 from attacks.handlers.app_assign_handler import AppAssign_Handler
+from attacks.handlers.rolemanagemantCustom_handler import RolemanagemantCustom_Handler
+from attacks.handlers.rolemanagemantPersistance_handler import RolemanagemantPersistance_Handler
+from attacks.handlers.rolemanagemant_handler import Rolemanagemant_Handler
 from attacks.handlers import *
 
 from utils import logger
@@ -53,6 +56,9 @@ class AttackController:
         laps = Laps_Handler()
         secDef = SecDefaults_Handler()
         appAssing = AppAssign_Handler()
+        roleCustom = RolemanagemantCustom_Handler()
+        rolePersist = RolemanagemantPersistance_Handler()
+        roleManagement = Rolemanagemant_Handler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
@@ -69,5 +75,8 @@ class AttackController:
         gpim.set_next(laps)
         laps.set_next(secDef)
         secDef.set_next(appAssing)
+        appAssing.set_next(roleCustom)
+        roleCustom.set_next(rolePersist)
+        rolePersist.set_next(roleManagement)
 
         return application_rw_vector_attack.handle(request,[])
