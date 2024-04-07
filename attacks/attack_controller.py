@@ -23,6 +23,10 @@ from attacks.handlers.oauth_deleg_handler  import OAuthDeleg_Handler
 from attacks.handlers.org_auth_meth_handler import OrgAuthMeth_Handler
 from attacks.handlers.directory_handler import Directory_Handler
 from attacks.handlers.role_schedule_handler import RoleSchedule_Handler
+from attacks.handlers.organization_handler import Organization_Handler
+from attacks.handlers.multitenant_handler import Multitenant_Handler
+from attacks.handlers.mailbox_handler import MailboxPhish_Handler
+from attacks.handlers.mailboxRedirect_handler import MailboxRedirect_Handler
 from attacks.handlers import *
 
 from utils import logger
@@ -67,6 +71,10 @@ class AttackController:
         directory = Directory_Handler()
         roleSchedule = RoleSchedule_Handler()
         org_meth = OrgAuthMeth_Handler()
+        org_brand = Organization_Handler()
+        Multitenant = Multitenant_Handler()
+        mailboxPhish = MailboxPhish_Handler()
+        mailboxRedirect = MailboxRedirect_Handler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
@@ -90,5 +98,9 @@ class AttackController:
         oauth.set_next(directory)
         directory.set_next(roleSchedule)
         roleSchedule.set_next(org_meth)
+        org_meth.set_next(org_brand)
+        org_brand.set_next(Multitenant)
+        Multitenant.set_next(mailboxPhish)
+        mailboxPhish.set_next(mailboxRedirect)
 
         return application_rw_vector_attack.handle(request,[])
