@@ -26,7 +26,9 @@ from attacks.handlers.role_schedule_handler import RoleSchedule_Handler
 from attacks.handlers.organization_handler import Organization_Handler
 from attacks.handlers.multitenant_handler import Multitenant_Handler
 from attacks.handlers.mailbox_handler import MailboxPhish_Handler
+from attacks.handlers.policy_user_auth_method_handler import PolicyUserAuthMethod_Handler
 from attacks.handlers.mailboxRedirect_handler import MailboxRedirect_Handler
+from attacks.handlers.policy_user_takeover_handler import PolicyUserAuthTakeover_Handler
 from attacks.handlers import *
 
 from utils import logger
@@ -75,6 +77,8 @@ class AttackController:
         Multitenant = Multitenant_Handler()
         mailboxPhish = MailboxPhish_Handler()
         mailboxRedirect = MailboxRedirect_Handler()
+        policy_user_mfa = PolicyUserAuthMethod_Handler()
+        policy_user_takeover = PolicyUserAuthTakeover_Handler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
@@ -102,5 +106,7 @@ class AttackController:
         org_brand.set_next(Multitenant)
         Multitenant.set_next(mailboxPhish)
         mailboxPhish.set_next(mailboxRedirect)
+        mailboxRedirect.set_next(policy_user_mfa)
+        policy_user_mfa.set_next(policy_user_takeover)
 
         return application_rw_vector_attack.handle(request,[])
