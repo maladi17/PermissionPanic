@@ -29,6 +29,9 @@ from attacks.handlers.mailbox_handler import MailboxPhish_Handler
 from attacks.handlers.policy_user_auth_method_handler import PolicyUserAuthMethod_Handler
 from attacks.handlers.mailboxRedirect_handler import MailboxRedirect_Handler
 from attacks.handlers.policy_user_takeover_handler import PolicyUserAuthTakeover_Handler
+from attacks.handlers.lifecycle_handler import Lifecycle_Handler
+from attacks.handlers.lifecycle_group_handler import Lifecycle_GroupHandler
+from attacks.handlers.lifecycle_disable_handler import Lifecycle_DisableHandler
 from attacks.handlers import *
 
 from utils import logger
@@ -79,6 +82,9 @@ class AttackController:
         mailboxRedirect = MailboxRedirect_Handler()
         policy_user_mfa = PolicyUserAuthMethod_Handler()
         policy_user_takeover = PolicyUserAuthTakeover_Handler()
+        lifecycle = Lifecycle_Handler()
+        lifecycleGroup = Lifecycle_GroupHandler()
+        lifecycleDisable = Lifecycle_DisableHandler()
 
         application_rw_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
@@ -108,5 +114,9 @@ class AttackController:
         mailboxPhish.set_next(mailboxRedirect)
         mailboxRedirect.set_next(policy_user_mfa)
         policy_user_mfa.set_next(policy_user_takeover)
+        policy_user_takeover.set_next(lifecycle)
+        lifecycle.set_next(lifecycleGroup)
+        lifecycleGroup.set_next(lifecycleDisable)
+
 
         return application_rw_vector_attack.handle(request,[])
