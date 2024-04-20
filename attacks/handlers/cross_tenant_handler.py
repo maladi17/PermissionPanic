@@ -10,6 +10,7 @@ class CrossTenant_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         # TODO map request.roles to fit with this attack
         if "Policy.ReadWrite.CrossTenantAccess" in request.roles:
+            logger.info('tid: %s, appid: %s may be vulnerable to cross_tenant vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "CrossTenantAccessRWVectors"
             message = ""

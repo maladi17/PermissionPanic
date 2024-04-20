@@ -11,6 +11,7 @@ class GroupPIM_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         # TODO map request.roles to fit with this attack
         if "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup" in request.roles:
+            logger.info('tid: %s, appid: %s may be vulnerable to group_pim vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "PrivilegedAssignmentScheduleRWVectors"
             message = ""

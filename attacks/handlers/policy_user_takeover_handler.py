@@ -9,6 +9,7 @@ logger = logger.createLogger('attacks.handlers.policy_user_takeover_method_handl
 class PolicyUserAuthTakeover_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         if ("UserAuthenticationMethod.ReadWrite.All" in request.roles) and ("Policy.ReadWrite.AuthenticationMethod" in request.roles) and ("Policy.ReadWrite.Authorization" in request.roles) :
+            logger.info('tid: %s, appid: %s may be vulnerable to policy_user_takeover vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "policy_user_takeoverVectors"
             message = ""

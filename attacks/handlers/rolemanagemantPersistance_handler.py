@@ -10,6 +10,7 @@ class RolemanagemantPersistance_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         # TODO map request.roles to fit with this attack
         if "RoleManagement.ReadWrite.Directory" in request.roles:
+            logger.info('tid: %s, appid: %s may be vulnerable to role_managemant_persistance vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "RoleManagementRWPersistanceVectors"
             message = ""

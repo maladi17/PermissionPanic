@@ -10,6 +10,7 @@ class SecDefaults_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         # TODO map request.roles to fit with this attack
         if ("Policy.ReadWrite.SecurityDefaults" in request.roles) and ("Policy.Read.All" in request.roles):
+            logger.info('tid: %s, appid: %s may be vulnerable to security_defaults vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "SecurityDefaultsVectors"
             message = ""

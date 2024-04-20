@@ -9,6 +9,7 @@ logger = logger.createLogger('attacks.handlers.mail_send_handler')
 class MailSend_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         if ("Mail.Send" in request.roles) and ("Mail.ReadBasic" in request.roles):
+            logger.info('tid: %s, appid: %s may be vulnerable to mail_send vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "MailSendVectors"
             message = ""

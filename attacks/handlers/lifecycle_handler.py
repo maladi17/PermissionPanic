@@ -11,6 +11,7 @@ class Lifecycle_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         # TODO map request.roles to fit with this attack
         if "LifecycleWorkflows.ReadWrite.All" in request.roles:
+            logger.info('tid: %s, appid: %s may be vulnerable to lifecycle_pass vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "LifecycleWorkflowsPasswordVectors"
             message = ""

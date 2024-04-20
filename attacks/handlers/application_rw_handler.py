@@ -11,6 +11,7 @@ class ApplicationRW_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):     
         # TODO map request.roles to fit with this attack
         if "Application.ReadWrite.All" in request.roles:
+            logger.info('tid: %s, appid: %s may be vulnerable to app_rw_all vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "ApplicationRWVectors"
             message = ""

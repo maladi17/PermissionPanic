@@ -33,6 +33,7 @@ from attacks.handlers.lifecycle_handler import Lifecycle_Handler
 from attacks.handlers.lifecycle_group_handler import Lifecycle_GroupHandler
 from attacks.handlers.lifecycle_disable_handler import Lifecycle_DisableHandler
 from attacks.handlers import *
+import pandas as pd
 
 from utils import logger
 from typing import Optional, List
@@ -46,10 +47,10 @@ class AttackController:
         self.appId = app["appId"]
         self.token = app["token"]
         self.roles = app["roles"]
+        self.responses = []
         
 
     def run_attacks(self) ->Optional[List[Response]]:
-        
         conf = Configuration().get_config()
         request = Request(self.token,conf,self.tenantId,self.appId,self.roles)
         
@@ -117,6 +118,13 @@ class AttackController:
         policy_user_takeover.set_next(lifecycle)
         lifecycle.set_next(lifecycleGroup)
         lifecycleGroup.set_next(lifecycleDisable)
+        self.responses = application_rw_vector_attack.handle(request,[])
 
 
-        return application_rw_vector_attack.handle(request,[])
+    def get_responses_df(self):
+        data = [(response.attack_name, response.tenantId, response.appId, response.status, response.message) for response in self.responses]
+        return pd.DataFrame(data, columns=['Attack Name', 'Tenant ID', 'App ID', 'Status', 'Message'])
+        
+        
+        
+        

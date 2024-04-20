@@ -10,6 +10,7 @@ class Directory_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         # TODO map request.roles to fit with this attack
         if "Directory.ReadWrite.All" in request.roles:
+            logger.info('tid: %s, appid: %s may be vulnerable to directory_rw_all vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "DirectoryVectors"
             message = ""

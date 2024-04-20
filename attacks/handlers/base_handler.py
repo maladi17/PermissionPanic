@@ -21,16 +21,6 @@ class Response():
         self.status = status
         self.message = message
     
-    def to_dict(self):
-        return {
-            "attack_name": self.attack_name,
-            "tenantId": self.tenantId,
-            "appId": self.appId,
-            "status": self.status,
-            "message": self.message
-        }
-    def __str__(self) -> str:
-        return json.dumps(self.to_dict())
 
 class Handler(ABC):
     """

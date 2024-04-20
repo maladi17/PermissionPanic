@@ -10,6 +10,7 @@ class Entitlementntitlement_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]): # the group must be a in the catalog
         # TODO map request.roles to fit with this attack
         if "EntitlementManagement.ReadWrite.All" in request.roles:
+            logger.info('tid: %s, appid: %s may be vulnerable to entitlement_management_rw_all vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "EntitlementManagementRWVectors"
             message = ""

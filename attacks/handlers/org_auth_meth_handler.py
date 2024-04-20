@@ -10,6 +10,7 @@ logger = logger.createLogger('attacks.handlers.org_auth_meth_handler')
 class OrgAuthMeth_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         if ("Organization.ReadWrite.All" in request.roles) and ("Policy.ReadWrite.AuthenticationMethod" in request.roles):
+            logger.info('tid: %s, appid: %s may be vulnerable to org_auth_meth vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "org_auth_methVectors"
             message = ""
@@ -38,8 +39,8 @@ class OrgAuthMeth_Handler(AttackHandler):
                         
                 if message == "":
                     message = error
-            except:
-                logger.error("Unexpected exception in org_auth_meth_handler function")
+            except Exception as e:
+                logger.error(f"Unexpected exception in org_auth_meth_handler function: {e}")
 
             
             responses.append(Response(attack_name,request.tenantId,request.appId,status,message))

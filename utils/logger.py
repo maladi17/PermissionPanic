@@ -18,7 +18,7 @@ def createLogger(scope):
     else:
         logger.setLevel(logging.INFO)
     # Create formatter
-    formatter = logging.Formatter('%(levelname)s - %(name)s - %(message)s')
+    formatter = logging.Formatter('%(levelname)s %(name)s: %(message)s')
 
     # Create console handler and set level to INFO
     console_handler = logging.StreamHandler()

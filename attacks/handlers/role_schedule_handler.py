@@ -11,6 +11,7 @@ class RoleSchedule_Handler(AttackHandler):
     def handle(self, request: Request,responses:List[Response]):
         # TODO map request.roles to fit with this attack
         if "RoleAssignmentSchedule.ReadWrite.Directory" in request.roles:
+            logger.info('tid: %s, appid: %s may be vulnerable to role_assignment_schedule vector' % (request.tenantId,request.appId))
             status = False
             attack_name = "roleAssignmentScheduleVectors"
             message = ""
