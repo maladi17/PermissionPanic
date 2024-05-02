@@ -1,15 +1,6 @@
-from utils import logger
-from attacks.attack_controller import AttackController
-from utils import azure_utils
-from utils.configuration import Configuration 
 import argparse
-from AppRW import ApplicationRW_Vectors
+from utils.configuration import Configuration 
 from pyfiglet import Figlet
-import pandas as pd
-
-logger = logger.createLogger('main')
-
-
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='PermissionPanic CLI Tool')
@@ -23,6 +14,35 @@ def parse_arguments():
                         default='stdout', help='Output stream (defult is stdout)')
     
     return parser.parse_args()
+
+
+
+def banner():
+    custom_fig = Figlet(font='Fender')
+    print(custom_fig.renderText('PermissionPanic'))
+    custom_fig = Figlet(font='Digital')
+    print(custom_fig.renderText('Adi Malyanker'))
+    print(custom_fig.renderText('Shay Reuven'))
+
+
+
+args = parse_arguments()
+banner()
+conf = Configuration(filename=args.file).get_config()
+
+from utils import logger
+
+logger = logger.createLogger('main')
+logger.info(f'load configuration from: {args.file}')
+logger.info(f'log level set to: {conf["logLevel"]}')
+
+
+from attacks.attack_controller import AttackController
+from utils import azure_utils
+from AppRW import ApplicationRW_Vectors
+
+import pandas as pd
+
 
 def start_attack():
     config = Configuration().get_config()
@@ -39,12 +59,6 @@ def start_attack():
     df = vector_df[vector_df['Status'] == True]
     return df
 
-def banner():
-    custom_fig = Figlet(font='Fender')
-    print(custom_fig.renderText('PermissionPanic'))
-    custom_fig = Figlet(font='Digital')
-    print(custom_fig.renderText('Adi Malyanker'))
-    print(custom_fig.renderText('Shay Reuven'))
 
 def create_tokens(tenants,resourceURL):
     tokens = []
@@ -70,13 +84,9 @@ def handle_output(output,type):
 
 
 def main(args):
-    Configuration(filename=args.file).get_config()
-    logger.info(f'load configuration from: {args.file}')
     output = start_attack()
     handle_output(output,args.output)
 
 
 if __name__ == "__main__":
-    args = parse_arguments()
-    banner()
     main(args)

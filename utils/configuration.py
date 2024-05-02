@@ -16,7 +16,7 @@ class Configuration:
         try:
             with open(filename, 'r') as file:
                 config = json.load(file)
-            return config
+                return config
         except FileNotFoundError:
             print("Config file not found!")
             exit(-1)

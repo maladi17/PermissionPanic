@@ -1,5 +1,5 @@
 {
-    "logLevel": "INFO",
+    "logLevel": "DEBUG",
     "tenants": [
         {
             "tenantId": "6af675bf-f240-4c03-86c4-56f4b73342da",
