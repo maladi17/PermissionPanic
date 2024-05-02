@@ -20,11 +20,56 @@ This Tool is based on Adi Malyanker's research on application permissions in Ent
 
 ## Features
 
-A few of the things you can do with PermissionPanic:
+Permission you can exploit with PermissionPanic (some permissions got a couple of attack vectors):
 
-* blablabla
+* Application.Read.All + AppRoleAssignment.ReadWrite.All 
+  
+* Application.ReadWrite.All 
 
+* AdministrativeUnit.ReadWrite.All 
 
+* Policy.ReadWrite.ConditionalAccess
+
+* Policy.ReadWrite.CrossTenantAccess
+
+* Directory.ReadWrite.All
+
+* EntitlementManagement.ReadWrite.All
+
+* RoleManagement.ReadWrite.Exchange
+
+* PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup
+
+* DeviceLocalCredential.Read.All
+
+* LifecycleWorkflows.ReadWrite.All
+
+* Mail.Send + Mail.ReadBasic
+
+* MailboxSettings.ReadWrite
+
+* MultiTenantOrganization.ReadWrite.All
+
+* DelegatedPermissionGrant.ReadWrite.All
+
+* Organization.ReadWrite.All
+
+* UserAuthenticationMethod.ReadWrite.All
+
+* RoleAssignmentSchedule.ReadWrite.Directory
+
+* Policy.ReadWrite.SecurityDefaults
+
+* TeamMember.ReadWrite.All
+
+* TeamSettings.ReadWrite.All
+
+* User.EnableDisableAccount.All
+
+* User.Invite.All
+
+* User.ReadWrite.All
+* 
 
 ## Feedback
 
