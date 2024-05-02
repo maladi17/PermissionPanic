@@ -1,67 +1,155 @@
-{   "tenants": [{"6af675bf-f240-4c03-86c4-56f4b73342da":{
-
-    "b63e4c36-2b0b-4598-ab57-ea0bd97eef38": "4ZB8Q~H8_ooUzT6Y8v1.BMY3nUTzJgSjIlc6OaQ-",
-    "ea82d3a1-65eb-482e-8e01-c9ad49c2ea8a": "I6N8Q~XnL62~ZzT0VBOyXqlzdibzglRHjnsjCaPX",
-    "6bb36e66-9b82-4a6d-95a4-9b87d0511e23": "B4J8Q~FkAiWj7n2Nkai_4pOP~wQcHzieItuTNcvp",
-    "f398fb28-4646-4ac9-a375-02a06974de7b": "tbr8Q~m4bvg.CGtkgdDjn0tPgvmF2OFHuSYhYb4y",
-    "2ced8283-4523-40df-a8d4-805f76f02434": "kOd8Q~52KxqsJiixiO8hJD-IWLSK1jOa555tTbPp",
-    "b82ad3e1-3e2a-44db-9876-d5b2d110b528": "EH88Q~Se1ErZDdW5Z-GxtDmC7YYjxdbyUxL05dxe",
-    "dd769865-3a7b-4f4a-8bc7-95fa8ef03e57":  "Oon8Q~E_oLegHVWx5Juh-CGnKi7U9wYHrm1itde8",
-    "f7bdd53f-0811-4997-a9c1-26c1d298a5ec":  "KjI8Q~DNBiNTJuV1Fvo6ht3Pr_t9GSmCZfV-odoJ",
-    "122f8314-99d3-4687-9963-a5efd584a5dd":  "hu_8Q~5~oyJXo.UHkOG5WVww2G10b2VvW5Oy.b-E",
-    "1a532be0-c7bf-4cb2-ac08-1df4cf1c303d": "7dy8Q~w3aZC0XZaq8YHHGw3o4GkV-dHy_oc7RdBP",
-    "4d284544-b740-44ea-be11-d904470bef14": "XBO8Q~GHyonLxTj8hlHZ3GseRsUIlZHFarz0Eb1U",
-    "9e8d0068-4d22-4226-893d-4b4383ab40ae": "HZh8Q~VCPGvsaGt6iBCKB3VcniE8DNEenA70VbG.",
-    "bb1c7b86-3c4e-45b4-9fb5-207b1685c352": "AAK8Q~P-MPe0-N3y~jMaGIg4EYbMfoO3XtLjGa6-",
-    "d00d37ae-9910-4945-af65-bdd492e11a43": "Osc8Q~xhc3ICnMqFQp0YOT04rhuM4ildH7daKbNc",
-    "f42f3158-48c0-48d2-80fd-9190c741be8a": "Gek8Q~bSKjpWrKCZzjtJmOoESvzBjikUhJkEBajO",
-    "7b3d600c-ae69-45d8-9db8-140eafc82ea7": "CFH8Q~fu~JHUzdLh.y6v.eJXDeH8QJdWaIQRubXS",
-    "e72fcdde-c7b7-4aac-8545-68180609c3ca": "ZSR8Q~vedEMUIeeEfGutzW.KlPGwHvT3tgYAzdhY",
-    "46016fec-fd45-477f-a7af-eaa9546ff8cb": "HnX8Q~3LFxHex~X0WmCOUJUI~SMEuDVNPqo4YbPD",
-    "42bf09a0-5ad6-4241-8302-aac04a279ed8": "88p8Q~MaoYtMRvjAtfj7hSxvBtLlHxIX3~LkMdxL",
-    "20b1178c-ea1c-4c33-aa63-5e16f73d086c": "lwY8Q~PrhHukA4X4SB1_aVSSLnZAwZFFstfslaJA",
-    "46c95666-25d7-405a-8a4c-e366489beeb6": "NwU8Q~vdpP.i59_SButDanQKA9xg0CfSJnjGBcxs",
-    "f54384d7-68d2-40f5-a96c-9dd9b9c64392": "yxF8Q~Gp-kzliWn_EE2LY9BZrMu6c~WSfsgN.aiG",
-    "3a6e1619-a4b5-46d3-b921-90ea6425d1ae": "ylb8Q~oj-bvYwmEpzO8GwpJeoDPBKWiMau3kscIj",
-    "853b7405-a686-4b20-819a-a1531f60be5f": "lYQ8Q~vGDcOz~dCWIAmdeJMNjioMkdmgOZ6G-deX",
-    "b652cb35-04ac-4b91-bff8-7d0f8a4850cb": "4ql8Q~cIehqasmsQUPGEPbJSg2r0E.e5s4sRta1A",
-    "3ba22762-810f-49bc-86ab-a2d75db5e950": "8pk8Q~cwIEmIqHa~EnXLRrRSbFJyYqug0XUNaaU0",
-    "fb70de81-ef27-40b6-883b-c9d41503d3a7": "BtX8Q~P3DpbG_t_d5vpUM6WkA0h1s9hjRnkCic5X",
-    "977cc5bb-2ca1-41c9-ae0c-dbae191907f4": "qxH8Q~kWDXYrflTS4g8CytyF0pCcxIeZgj_ApcyG"
-}},
-    {"1d4d77f4-1713-4c31-b958-59500ea8d92e": {"823cb9f9-1589-4357-acb8-48134efa6a86":"JaT8Q~_AjGpnGqPKwi4N6zpQyQiiqOqu-QVmicdB"}}],
-
-    "ApplicationReadWriteAll":{
-        "sp": ["1a4c84c0-854b-47b2-a7f2-8ccce03e1d51"],
-        "dn":"MySecret",
-        "attacker": ["dc349220-e00e-47af-8bfa-8ce07d2cc8c4"],
-        "addOwnerToEA": ["02734bdd-df67-4798-8e3d-cc09b5101bc2"],
-        "addOwnerToSP": ["1a4c84c0-854b-47b2-a7f2-8ccce03e1d51"]
+{
+    "logLevel": "INFO",
+    "tenants": [
+        {
+            "tenantId": "6af675bf-f240-4c03-86c4-56f4b73342da",
+            "applications": [
+                {
+                    "b63e4c36-2b0b-4598-ab57-ea0bd97eef38": "4ZB8Q~H8_ooUzT6Y8v1.BMY3nUTzJgSjIlc6OaQ-"
+                },
+                {
+                    "ea82d3a1-65eb-482e-8e01-c9ad49c2ea8a": "I6N8Q~XnL62~ZzT0VBOyXqlzdibzglRHjnsjCaPX"
+                },
+                {
+                    "6bb36e66-9b82-4a6d-95a4-9b87d0511e23": "B4J8Q~FkAiWj7n2Nkai_4pOP~wQcHzieItuTNcvp"
+                },
+                {
+                    "f398fb28-4646-4ac9-a375-02a06974de7b": "tbr8Q~m4bvg.CGtkgdDjn0tPgvmF2OFHuSYhYb4y"
+                },
+                {
+                    "2ced8283-4523-40df-a8d4-805f76f02434": "kOd8Q~52KxqsJiixiO8hJD-IWLSK1jOa555tTbPp"
+                },
+                {
+                    "b82ad3e1-3e2a-44db-9876-d5b2d110b528": "EH88Q~Se1ErZDdW5Z-GxtDmC7YYjxdbyUxL05dxe"
+                },
+                {
+                    "dd769865-3a7b-4f4a-8bc7-95fa8ef03e57": "Oon8Q~E_oLegHVWx5Juh-CGnKi7U9wYHrm1itde8"
+                },
+                {
+                    "f7bdd53f-0811-4997-a9c1-26c1d298a5ec": "KjI8Q~DNBiNTJuV1Fvo6ht3Pr_t9GSmCZfV-odoJ"
+                },
+                {
+                    "122f8314-99d3-4687-9963-a5efd584a5dd": "hu_8Q~5~oyJXo.UHkOG5WVww2G10b2VvW5Oy.b-E"
+                },
+                {
+                    "1a532be0-c7bf-4cb2-ac08-1df4cf1c303d": "7dy8Q~w3aZC0XZaq8YHHGw3o4GkV-dHy_oc7RdBP"
+                },
+                {
+                    "4d284544-b740-44ea-be11-d904470bef14": "XBO8Q~GHyonLxTj8hlHZ3GseRsUIlZHFarz0Eb1U"
+                },
+                {
+                    "9e8d0068-4d22-4226-893d-4b4383ab40ae": "HZh8Q~VCPGvsaGt6iBCKB3VcniE8DNEenA70VbG."
+                },
+                {
+                    "bb1c7b86-3c4e-45b4-9fb5-207b1685c352": "AAK8Q~P-MPe0-N3y~jMaGIg4EYbMfoO3XtLjGa6-"
+                },
+                {
+                    "d00d37ae-9910-4945-af65-bdd492e11a43": "Osc8Q~xhc3ICnMqFQp0YOT04rhuM4ildH7daKbNc"
+                },
+                {
+                    "f42f3158-48c0-48d2-80fd-9190c741be8a": "Gek8Q~bSKjpWrKCZzjtJmOoESvzBjikUhJkEBajO"
+                },
+                {
+                    "7b3d600c-ae69-45d8-9db8-140eafc82ea7": "CFH8Q~fu~JHUzdLh.y6v.eJXDeH8QJdWaIQRubXS"
+                },
+                {
+                    "e72fcdde-c7b7-4aac-8545-68180609c3ca": "ZSR8Q~vedEMUIeeEfGutzW.KlPGwHvT3tgYAzdhY"
+                },
+                {
+                    "46016fec-fd45-477f-a7af-eaa9546ff8cb": "HnX8Q~3LFxHex~X0WmCOUJUI~SMEuDVNPqo4YbPD"
+                },
+                {
+                    "42bf09a0-5ad6-4241-8302-aac04a279ed8": "88p8Q~MaoYtMRvjAtfj7hSxvBtLlHxIX3~LkMdxL"
+                },
+                {
+                    "20b1178c-ea1c-4c33-aa63-5e16f73d086c": "lwY8Q~PrhHukA4X4SB1_aVSSLnZAwZFFstfslaJA"
+                },
+                {
+                    "46c95666-25d7-405a-8a4c-e366489beeb6": "NwU8Q~vdpP.i59_SButDanQKA9xg0CfSJnjGBcxs"
+                },
+                {
+                    "f54384d7-68d2-40f5-a96c-9dd9b9c64392": "yxF8Q~Gp-kzliWn_EE2LY9BZrMu6c~WSfsgN.aiG"
+                },
+                {
+                    "3a6e1619-a4b5-46d3-b921-90ea6425d1ae": "ylb8Q~oj-bvYwmEpzO8GwpJeoDPBKWiMau3kscIj"
+                },
+                {
+                    "853b7405-a686-4b20-819a-a1531f60be5f": "lYQ8Q~vGDcOz~dCWIAmdeJMNjioMkdmgOZ6G-deX"
+                },
+                {
+                    "b652cb35-04ac-4b91-bff8-7d0f8a4850cb": "4ql8Q~cIehqasmsQUPGEPbJSg2r0E.e5s4sRta1A"
+                },
+                {
+                    "3ba22762-810f-49bc-86ab-a2d75db5e950": "8pk8Q~cwIEmIqHa~EnXLRrRSbFJyYqug0XUNaaU0"
+                },
+                {
+                    "fb70de81-ef27-40b6-883b-c9d41503d3a7": "BtX8Q~P3DpbG_t_d5vpUM6WkA0h1s9hjRnkCic5X"
+                },
+                {
+                    "977cc5bb-2ca1-41c9-ae0c-dbae191907f4": "qxH8Q~kWDXYrflTS4g8CytyF0pCcxIeZgj_ApcyG"
+                }
+            ]
+        },
+        {
+            "tenantId": "1d4d77f4-1713-4c31-b958-59500ea8d92e",
+            "applications": [
+                {
+                    "823cb9f9-1589-4357-acb8-48134efa6a86": "JaT8Q~_AjGpnGqPKwi4N6zpQyQiiqOqu-QVmicdB"
+                }
+            ]
+        }
+    ],
+    "ApplicationReadWriteAll": {
+        "sp": [
+            "1a4c84c0-854b-47b2-a7f2-8ccce03e1d51"
+        ],
+        "dn": "MySecret",
+        "attacker": [
+            "dc349220-e00e-47af-8bfa-8ce07d2cc8c4"
+        ],
+        "addOwnerToEA": [
+            "02734bdd-df67-4798-8e3d-cc09b5101bc2"
+        ],
+        "addOwnerToSP": [
+            "1a4c84c0-854b-47b2-a7f2-8ccce03e1d51"
+        ]
     },
     "UserReadWriteAll": {
-        "users": ["2e73168f-0a7c-45d2-9848-2bb9b390c810"]
+        "users": [
+            "2e73168f-0a7c-45d2-9848-2bb9b390c810"
+        ]
     },
     "UserInvite": {
-        "users": ["maladi1747@gmail.com"]
+        "users": [
+            "maladi1747@gmail.com"
+        ]
     },
     "UserEnDis": {
-        "users": ["9d025f8f-64cb-46c5-9510-702c8ab8f440"]
+        "users": [
+            "9d025f8f-64cb-46c5-9510-702c8ab8f440"
+        ]
     },
     "administrativeUnits": {
-        "AU": ["6418332c-8c6b-4e63-a4b5-0d9265e6c551"],
-        "users": ["0de0c503-709d-4610-911d-8d9279fcd7b2"]
+        "AU": [
+            "6418332c-8c6b-4e63-a4b5-0d9265e6c551"
+        ],
+        "users": [
+            "0de0c503-709d-4610-911d-8d9279fcd7b2"
+        ]
     },
     "organization": {
         "orgID": "6af675bf-f240-4c03-86c4-56f4b73342da",
         "urlPrivacy": "https://google.com",
-        "TermsUrl":  "https://walla.co.il",
+        "TermsUrl": "https://walla.co.il",
         "resetUrl": "https://walla.co.il"
     },
     "roleManagement": {
         "roleUpdateId": "5cb6244d-1239-44fb-9353-07c5b10c3d8a",
-        "permissions": ["microsoft.directory/users/authenticationMethods/create"],
+        "permissions": [
+            "microsoft.directory/users/authenticationMethods/create"
+        ],
         "newRoleName": "attackRole",
-        "newRoleDesc":  "this role was create by PermissionPanic",
+        "newRoleDesc": "this role was create by PermissionPanic",
         "user": "9d025f8f-64cb-46c5-9510-702c8ab8f440",
         "roleId": "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3"
     },
@@ -69,15 +157,21 @@
         "teamNames": []
     },
     "TeamsMemSettings": {
-        "teamNames": ["fc1ac597-1a0a-44b9-a172-7fed3d1e5088"],
-        "users": ["0de0c503-709d-4610-911d-8d9279fcd7b2"]
+        "teamNames": [
+            "fc1ac597-1a0a-44b9-a172-7fed3d1e5088"
+        ],
+        "users": [
+            "0de0c503-709d-4610-911d-8d9279fcd7b2"
+        ]
     },
     "RoleSchedule": {
         "roleDefinitionId": "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3",
         "principalId": "0de0c503-709d-4610-911d-8d9279fcd7b2"
     },
     "mailSend": {
-        "victims": ["e2acf598-69b1-4aea-b1a9-046520e8de74"],
+        "victims": [
+            "e2acf598-69b1-4aea-b1a9-046520e8de74"
+        ],
         "attacker": "privileged_user@yzt2w.onmicrosoft.com"
     },
     "mailbox": {
@@ -103,7 +197,7 @@
     },
     "lifecycle": {
         "userCC": "3ffba446-4efe-418b-91d7-c28c177784ee",
-        "victim":"ebaf8353-0f2d-4cc3-9b5a-f6737827bab8",
+        "victim": "ebaf8353-0f2d-4cc3-9b5a-f6737827bab8",
         "groupId": "7e613ea1-f7d7-4b98-a503-4ff2f7ba9cfe",
         "attacker": "ebaf8353-0f2d-4cc3-9b5a-f6737827bab8"
     },
