@@ -69,7 +69,9 @@ Permission you can exploit with PermissionPanic (some permissions got a couple o
 * User.Invite.All
 
 * User.ReadWrite.All
-* 
+
+## output example
+[output example]https://github.com/maladi17/PermissionPanic/blob/main/output.csv)
 
 ## Feedback
 
