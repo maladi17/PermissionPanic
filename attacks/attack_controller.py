@@ -1,7 +1,7 @@
 from attacks.handlers.user_invite_handler import UserInvite_Handler
 from attacks.handlers.base_handler import Request, Response
 from utils.configuration import Configuration
-from attacks.handlers.application_rw_handler import ApplicationRW_Handler
+from attacks.handlers.application_rw_directory_r_handler import ApplicationRWDirectoryR_Handler
 from attacks.handlers.user_rw_handler import UserRW_Handler
 from attacks.handlers.au_handler import AU_Handler
 from attacks.handlers.team_settings_handler import TeamSettings_Handler
@@ -54,7 +54,7 @@ class AttackController:
         conf = Configuration().get_config()
         request = Request(self.token,conf,self.tenantId,self.appId,self.roles)
         
-        application_rw_vector_attack = ApplicationRW_Handler()
+        application_rw_vector_attack = ApplicationRWDirectoryR_Handler()
         user_rw_vector_attack = UserRW_Handler()
         user_invite_handler = UserInvite_Handler()
         au_rw_handler = AU_Handler()
@@ -86,8 +86,9 @@ class AttackController:
         lifecycle = Lifecycle_Handler()
         lifecycleGroup = Lifecycle_GroupHandler()
         lifecycleDisable = Lifecycle_DisableHandler()
+        application_rw_dirctory_r_vector_attack = ApplicationRWDirectoryR_Handler()
 
-        application_rw_vector_attack.set_next(user_rw_vector_attack)
+        application_rw_dirctory_r_vector_attack.set_next(user_rw_vector_attack)
         user_rw_vector_attack.set_next(user_invite_handler)
         user_invite_handler.set_next(au_rw_handler)
         au_rw_handler.set_next(team_settings_handler)
@@ -118,7 +119,7 @@ class AttackController:
         policy_user_takeover.set_next(lifecycle)
         lifecycle.set_next(lifecycleGroup)
         lifecycleGroup.set_next(lifecycleDisable)
-        self.responses = application_rw_vector_attack.handle(request,[])
+        self.responses = application_rw_dirctory_r_vector_attack.handle(request,[])
 
 
     def get_responses_df(self):

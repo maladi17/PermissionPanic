@@ -77,7 +77,7 @@
         "phone": "+1 2065555555" // attacker phone number
     },
     "OrgAuthMeth": {
-        "cert_file": "C:\\Users\\AdiMalyanker\\OneDrive - Semperis\\Desktop\\working dir\\researches\\perssions\\ca\\ca.cer", //root ca cert path
+        "cert_file": "ca.cer", //root ca cert path
         "groupId": "4e6646b7-5fd0-47fa-b05d-8ac6623537f3" // group to be added
     },
     "oauthDeleg": {

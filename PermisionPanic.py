@@ -74,12 +74,14 @@ def create_tokens(tenants,resourceURL):
     return tokens
 
 def handle_output(output,type):
+    print()
     if type == "csv":
         output.to_csv('output.csv', index=False)
+        logger.info('Save result in output.csv')
     elif type == "json":
         output.to_json('output.json', orient='records')
+        logger.info('Save result in output.json')
     else:
-        print()
         print(output)
 
 
