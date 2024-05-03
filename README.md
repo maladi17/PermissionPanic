@@ -75,6 +75,10 @@ Permission you can exploit with PermissionPanic (some permissions got a couple o
 
 ## Usage
 
+In order to setup the code, please use:
+```
+pip install -r requirements.txt
+```
 Create a configurations file accroding to the next section.
 Run in the following way:
 
