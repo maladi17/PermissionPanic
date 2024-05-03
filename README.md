@@ -89,7 +89,7 @@ Python PermissionPanic.py -o json -f conf.json
 
 ## configuration_file
 
-Please check out the attached config file for an example.
+Please check out the attached config file for an example. Change the chunks of <> with the your values.
 
 ```
 {
