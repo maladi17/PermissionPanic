@@ -7,6 +7,9 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Usage](#usage)
+- [Configuration file](#configuration_file)
+- [Output](#output)
 - [Feedback](#feedback)
 - [Contributors](#contributors)
 - [Acknowledgments](#acknowledgments)
@@ -70,7 +73,8 @@ Permission you can exploit with PermissionPanic (some permissions got a couple o
 
 * User.ReadWrite.All
 
-## Usage 
+## Usage
+
 Create a configurations file accroding to the next section.
 Run in the following way:
 
@@ -83,7 +87,10 @@ Python PermissionPanic.py -o json -f conf.json
 ```
 
 
-## configuration file (check out the attached config file)
+## configuration_file
+
+Please check out the attached config file for an example.
+
 ```
 {
     "logLevel": <logging level, for example INFO>, 
@@ -231,7 +238,7 @@ Python PermissionPanic.py -o json -f conf.json
     }
 }
 ```
-## output example
+## Output
 [output](https://github.com/maladi17/PermissionPanic/blob/main/output.csv)
 
 <img src="csv.png" >
