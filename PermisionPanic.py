@@ -39,7 +39,6 @@ logger.info(f'log level set to: {conf["logLevel"]}')
 
 from attacks.attack_controller import AttackController
 from utils import azure_utils
-from AppRW import ApplicationRW_Vectors
 
 import pandas as pd
 
