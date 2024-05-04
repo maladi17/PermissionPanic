@@ -247,6 +247,11 @@ Please check out the attached config file for an example. Change the chunks of <
 
 <img src="csv.png" >
 
+## Example
+
+![](https://github.com/maladi17/PermissionPanic/blob/main/example.gif)
+
+
 ## Feedback
 
 Feel free to send us feedback on <some contact way> or open an issue. Feature requests are always welcome. If you wish to contribute, please contact us.
