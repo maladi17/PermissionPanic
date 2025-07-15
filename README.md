@@ -261,6 +261,3 @@ Feel free to send us feedback on <some contact way> or open an issue. Feature re
 * Adi Malyanker - A security researcher in Semperis. Made the research and developed the tool's indicators.
 * Shay Reuven - A security architect in Bank Leumi. Developed the tool's infrastructure.
 
-## Acknowledgments
-
-Thanks to [Semperis](https://www.semperis.com/) for supporting this research.
